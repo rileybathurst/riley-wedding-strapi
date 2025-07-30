@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medium",
+  "info": {
+    "singularName": "media",
+    "pluralName": "medium",
+    "displayName": "media"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 160
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[a-z0-9_-]+$"
+    },
+    "couples": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::couple.couple",
+      "inversedBy": "media"
+    }
+  }
+}

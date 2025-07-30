@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "addressLocality": {
+      "type": "string"
+    },
+    "addressRegion": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "venues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::venue.venue",
+      "mappedBy": "location"
+    },
+    "couple": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::couple.couple",
+      "mappedBy": "location"
+    }
+  }
+}
